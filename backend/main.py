@@ -125,7 +125,7 @@ class InterviewRequest(BaseModel):
     answers: list[str]
 @app.post("/feedback")
 def get_feedback(data: AnswerRequest):
-
+   try:
     prompt = f"""
 You are an interview evaluator.
 
@@ -148,10 +148,16 @@ Keep the response under 150 words.
     return {
         "feedback": response.text
     }
+   except Exception:
+        return {
+            "feedback": "AI service is temporarily unavailable. Please try again later."
+        }
+      
+
 
 @app.post("/followup")
 def followup(data: AnswerRequest):
-
+ try:
     prompt = f"""
 You are an interviewer.
 
@@ -170,6 +176,11 @@ Only return the question.
     return {
         "question": response.text
     }
+ except Exception:
+        return {
+            "feedback": "AI service is temporarily unavailable. Please try again later."
+        }
+    
 
 
 
@@ -202,7 +213,7 @@ Keep the report professional and under 250 words.
             "report": response.text
         }
 
-    except Exception as e:
+    except Exception:
         return {
-            "report": f"Unable to generate AI report right now.\n\nError: {str(e)}"
+            "feedback": "AI service is temporarily unavailable. Please try again later."
         }
