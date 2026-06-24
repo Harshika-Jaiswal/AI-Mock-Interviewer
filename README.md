@@ -245,6 +245,11 @@ GEMINI_API_KEY=YOUR_API_KEY
 ```
 
 ---
+## 🤖 API Requirements
+
+This project uses the Google Gemini API for AI-powered interview evaluation and feedback generation.
+
+To use the AI feedback features, provide a valid Gemini API key in the .env file.
 
 ## 🧠 Generative AI Usage
 
