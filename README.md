@@ -19,6 +19,9 @@ Preparing for interviews can be challenging because candidates often lack person
 The goal of this project is to help students and job seekers improve their interview performance before facing real recruiters.
 
 ---
+## 🚀 Live Demo
+
+🔗 Application: https://ai-mock-interviewer-sandy.vercel.app/
 
 ## ✨ Key Features
 
