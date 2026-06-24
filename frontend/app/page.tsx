@@ -23,7 +23,7 @@ const [followUpQuestion, setFollowUpQuestion] = useState("");
   if (!category) return;
 
   fetch(
-    `http://127.0.0.1:8000/question/${category}/${questionIndex}`
+    `https://ai-mock-interviewer-backend-isr3.onrender.com/question/${category}/${questionIndex}`
   )
     .then((res) => res.json())
     .then((data) => setQuestion(data.question));
@@ -58,7 +58,7 @@ const [followUpQuestion, setFollowUpQuestion] = useState("");
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/feedback",
+        "https://ai-mock-interviewer-backend-isr3.onrender.com/feedback",
         {
           method: "POST",
           headers: {
@@ -78,7 +78,7 @@ const [followUpQuestion, setFollowUpQuestion] = useState("");
       setAnswers((prev) => [...prev, answer]);
       setAllFeedbacks((prev) => [...prev, data.feedback]);
       const followupResponse = await fetch(
-  "http://127.0.0.1:8000/followup",
+  "https://ai-mock-interviewer-backend-isr3.onrender.com/followup",
   {
     method: "POST",
     headers: {
@@ -113,7 +113,7 @@ setFollowUpQuestion(followupData.question);
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/final-feedback",
+        "https://ai-mock-interviewer-backend-isr3.onrender.com/final-feedback",
         {
           method: "POST",
           headers: {
@@ -160,7 +160,7 @@ if (category === "") {
       
       <button
         onClick={async () => {
-          await fetch("http://127.0.0.1:8000/start/HR");
+          await fetch("https://ai-mock-interviewer-backend-isr3.onrender.com/start/HR");
           setCategory("HR");
         }}
         className="bg-blue-600 text-white px-6 py-3 rounded"
@@ -170,7 +170,7 @@ if (category === "") {
 
       <button
         onClick={async () => {
-          await fetch("http://127.0.0.1:8000/start/Technical");
+          await fetch("https://ai-mock-interviewer-backend-isr3.onrender.com/start/Technical");
           setCategory("Technical");
         }}
         className="bg-green-600 text-white px-6 py-3 rounded"
@@ -180,7 +180,7 @@ if (category === "") {
 
       <button
         onClick={async () => {
-          await fetch("http://127.0.0.1:8000/start/Project");
+          await fetch("https://ai-mock-interviewer-backend-isr3.onrender.com/start/Project");
           setCategory("Project");
         }}
         className="bg-purple-600 text-white px-6 py-3 rounded"
